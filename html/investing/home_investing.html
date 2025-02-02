@@ -54,7 +54,7 @@
             padding: 10px;
             margin: 10px 0;
             background-color: #ffffff;
-            width: 80%;
+            width: auto;
         }
 
         .box h2 {
@@ -93,6 +93,7 @@
         }
 
         li {
+            margin-top: -5px;
             margin-left: -20px;
         }
     </style>
@@ -101,8 +102,8 @@
 <body>
     <div class="sidebar">
         <h2>Index</h2>
-        <a href="./index.html">🏠Home</a>
-        <a href="./html/programming/home_prog.html">💻Programming</a>
+        <a href="../../index.html">🏠Home</a>
+        <a href="./home_prog.html">💻Programming</a>
         <p>
         <ul>
             <li>Java</li>
@@ -110,7 +111,7 @@
             <li>HTML/CSS</li>
         </ul>
         </p>
-        <a href="./html/investing/home_investing.html">📈Investing</a>
+        <a href="#section3">📈Investing</a>
         <a href="#section4">🎮Games</a>
         <div>
             <ul>
@@ -132,21 +133,45 @@
         <marquee>WELCOME TO MY WEBSITE</marquee>
         <br>
         <a href="https://x.com/shunchama393" class="twitter">
-            <img src="./imgs/twitterIcon.png" alt="TwitterIcon">
+            <img src="../../../imgs/twitterIcon.png" alt="TwitterIcon">
             Twitter: @shunchama393
         </a>
         <p></p>
 
         <div class="box">
-            <h2>No content</h2>
-            <p>No content</p>
+            <h2 style="margin-bottom: 10px;">Investing Info.<iframe scrolling="no" frameborder="no" clocktype="html5"
+                    style="overflow:hidden;border:0;margin:0px;padding:1;width:240px;height:25px;margin-bottom: -9px;margin-left: 100px;"
+                    src="https://www.clocklink.com/html5embed.php?clock=018&timezone=JST&color=blue&size=240&Title=&Message=&Target=&From=2025,1,1,0,0,0&DateFormat=yyyy / mm / dd DDD&TimeFormat=hh:mm:ss TT&Color=blue"></iframe>
+            </h2>
+            <div class="">
+
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/"
+                            rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on
+                                TradingView</span></a></div>
+                    <script type="text/javascript"
+                        src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+                            {
+                                "width": "100%",
+                                    "height": "500",
+                                        "symbol": "VANTAGE:NIKKEI225",
+                                            "timezone": "Asia/Tokyo",
+                                                "theme": "dark",
+                                                    "style": "1",
+                                                        "locale": "en",
+                                                            "range": "1D",
+                                                                "allow_symbol_change": true,
+                                                                    "calendar": false,
+                                                                        "support_host": "https://www.tradingview.com"
+                            }
+                        </script>
+                </div>
+                <!-- TradingView Widget END -->
+            </div>
         </div>
-        <div class="box">
-            <h2>No content</h2>
-            <p>No content</p>
-        </div>
-        <h2 class="box">No content</h2>
-        <p>what content should I write :(</p>
+
 
 
         <table>
