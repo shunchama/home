@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>BFS</title>
     <style>
         body {
             background-color: #F0F0F0;
@@ -96,14 +96,19 @@
             margin-top: -5px;
             margin-left: -20px;
         }
+
+        pre {
+            background-color: #000000;
+            color: white;
+        }
     </style>
 </head>
 
 <body>
     <div class="sidebar">
         <h2>Index</h2>
-        <a href="../../index.html">🏠Home</a>
-        <a href="./home_prog.html">💻Programming</a>
+        <a href="../../../index.html">🏠Home</a>
+        <a href="../home_prog.html">💻Programming</a>
         <p>
         <ul>
             <li>Java</li>
@@ -111,7 +116,7 @@
             <li>HTML/CSS</li>
         </ul>
         </p>
-        <a href="../investing/home_investing.html">📈Investing</a>
+        <a href="../../investing/home_investing.html">📈Investing</a>
         <a href="#section4">🎮Games</a>
         <div>
             <ul>
@@ -126,59 +131,82 @@
 
     <div class="content">
         <div class="header">
-            <h1>shunchama's website</h1>
+            <h1>Java</h1>
         </div>
-        <p>I'm shunchama, a college student at Shizuoka University.</p>
 
-        <marquee>WELCOME TO MY WEBSITE</marquee>
-        <br>
         <a href="https://x.com/shunchama393" class="twitter">
             <img src="../../../imgs/twitterIcon.png" alt="TwitterIcon">
             Twitter: @shunchama393
         </a>
-        <p></p>
-
+        <h2>BFS(Breadth-First Search)</h2>
         <div class="box">
-            <h2>Java</h2>
-            <div class="class">
-                <ul>
-                    <li>
-                        <a href="./java/list_arrayList.html">List,ArrayList(sample program)</a>
-                    </li>
-                    <li>
-                        <a href="./java/bfs.html">BFS</a>
-                    </li>
-                </ul>
-            </div>
+            <p>
+            <h2>What is BFS?</h2>
+            BFS is a graph traversal algorithm that explores all nodes at the present depth level before moving to the
+            next level.
+            </p>
+            <br>
+            <p>[BFS.java]</p>
+            <pre><code>
+import java.util.*;
+
+class BFS {
+
+    private Map&lt;Character, List&lt;Character&gt;&gt; graph = new HashMap<>();
+
+    //Add an edge to the graph
+    public void addEdge(char node1, char node2) {
+        graph.putIfAbsent(node1, new ArrayList<>());
+        graph.putIfAbsent(node2, new ArrayList<>());
+        graph.get(node1).add(node2);
+        graph.get(node2).add(node1); //Undirected graph
+    }
+
+    //BFS Implementation
+    public void bfs(char startNode) {
+        Queue&lt;Character&gt; queue = new LinkedList<>();
+        Set&lt;Character&gt; visited = new HashSet<>();
+
+        queue.add(startNode);
+        visited.add(startNode);
+
+        System.out.print("BFS Order: ");
+
+        while (!queue.isEmpty()) {
+            char current = queue.poll();
+            System.out.print(current + " ");
+
+            for (char neighbor : graph.get(current)) {
+                if (!visited.contains(neighbor)) {
+                    queue.add(neighbor);
+                    visited.add(neighbor);
+                }
+            }
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        BFS graph = new BFS();
+        graph.addEdge('A', 'B');
+        graph.addEdge('A', 'C');
+        graph.addEdge('B', 'D');
+        graph.addEdge('B', 'E');
+        graph.addEdge('C', 'F');
+
+        graph.bfs('A');
+    }
+}
+
+            </code></pre>
+            <pre><code>
+    java BFS
+    BFS Order: A B C D E F
+            </code></pre>
+            <p>UploadedDate[2025-02-03]</p>
         </div>
 
-        <div class="box">
-            <h2>C/C++</h2>
-            <div class="class">
-                <ul>
-                    <li>
-                        <a href="">No content</a>
-                    </li>
-                    <li>
-                        <a href="">No content</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="box">
-            <h2>HTML/CSS/JS</h2>
-            <div class="class">
-                <ul>
-                    <li>
-                        <a href="">No content</a>
-                    </li>
-                    <li>
-                        <a href="">No content</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
         <footer>
             <br><br>
