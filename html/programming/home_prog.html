@@ -13,15 +13,15 @@
             margin: 0;
             padding: 0;
             display: flex;
-            width: 1200px;
+            justify-content: space-between;
+            /* 横並びに配置 */
         }
 
         .sidebar {
-            width: auto;
+            width: fit-content;
+            /* 文字の幅に合わせて調整 */
             background-color: #ffffff;
             padding: 10px;
-            position: fixed;
-            height: 100%;
             border-right: #000000 1px solid;
         }
 
@@ -38,10 +38,10 @@
         }
 
         .content {
-            margin-left: 150px;
             padding: 20px;
-            width: 100%;
             background-color: azure;
+            flex-grow: 1;
+            /* コンテンツが残りのスペースを占める */
         }
 
         .twitter img {
@@ -94,7 +94,6 @@
         }
 
         li {
-            margin-top: -5px;
             margin-left: -20px;
         }
     </style>
@@ -152,9 +151,9 @@
             <h3>Algolithm</h3>
             <div class="Algolithm">
                 <ul>
-                                        <li>
-                                            <a href="./java/bfs.html">BFS</a>
-                                        </li>
+                    <li>
+                        <a href="./java/bfs.html">BFS</a>
+                    </li>
                 </ul>
             </div>
         </div>
